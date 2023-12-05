@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/fragmentList">
+
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.example.sampleprojectb.FragmentList"
+        android:label="list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" />
+        <action
+            android:id="@+id/action_fragmentList_to_updateFragmentt3"
+            app:destination="@id/updateFragmentt3" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAdd"
+        android:name="com.example.sampleprojectb.FragmentAdd"
+        android:label="add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentList"
+            app:destination="@id/fragmentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragmentt3"
+        android:name="com.example.sampleprojectb.UpdateFragmentt"
+        android:label="Update"
+        tools:layout="@layout/fragment_update_fragmentt" >
+        <action
+            android:id="@+id/action_updateFragment_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.sampleprojectb.User" />
+    </fragment>
+</navigation>
